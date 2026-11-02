@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+html,
+body {
+    /* overflow-x: hidden; */
+}
+
+body {
+    background: #000;
+}
+
+.font-sixcaps {
+    font-family: "Six Caps", sans-serif;
+    font-weight: 400;
+}
+
+.font-anton {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+}
+
+.tangerine-regular {
+    font-family: "Tangerine", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tangerine-bold {
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* PortfolioCard.jsx image reveal transaction */
+
+.curtain {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.blind {
+    flex: 1;
+    background: #000;
+    /* same as page background */
+    transform: scaleY(1);
+    transform-origin: center;
+    will-change: transform;
+}
+
+/* Hide Horizontal Scrollbar */
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}

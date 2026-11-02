@@ -1,0 +1,349 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;500;600;700&display=swap");
+
+body.natural-home-active {
+    margin: 0;
+    overflow: hidden;
+    background: #242424;
+}
+
+body.natural-home-active #root {
+    min-height: 100svh;
+}
+
+.natural-home,
+.natural-home * {
+    box-sizing: border-box;
+}
+
+.natural-home {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    height: 100svh;
+    min-height: 520px;
+    overflow: hidden;
+    background: #393a37;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+.natural-home a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.natural-home__slides,
+.natural-home__slide,
+.natural-home__shade {
+    position: absolute;
+    inset: 0;
+}
+
+.natural-home__slides {
+    z-index: -2;
+}
+
+.natural-home__slide {
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transform: scale(1.035);
+    transition: opacity 1.7s ease, transform 7s ease;
+}
+
+.natural-home__slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.natural-home__shade {
+    z-index: -1;
+    background:
+        linear-gradient(90deg, rgba(12,14,13,.48) 0%, rgba(12,14,13,.16) 46%, rgba(12,14,13,.19) 100%),
+        linear-gradient(0deg, rgba(10,10,10,.50) 0%, transparent 22%, transparent 68%, rgba(10,10,10,.2) 100%);
+    pointer-events: none;
+}
+
+.natural-home__top {
+    position: absolute;
+    z-index: 2;
+    top: clamp(25px, 4.2vh, 48px);
+    left: clamp(24px, 3.2vw, 58px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.natural-home__monogram {
+    font-family: "Allura", cursive;
+    font-size: clamp(42px, 4vw, 64px);
+    line-height: .9;
+    letter-spacing: -3px;
+    margin-bottom: clamp(24px, 4vh, 46px);
+    text-shadow: 0 1px 8px #0002;
+}
+
+.natural-home__monogram span {
+    color: #d9c9a6;
+}
+
+.natural-home__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 150px;
+}
+
+.natural-home__menu-toggle {
+    width: 34px;
+    height: 30px;
+    padding: 5px 2px;
+    border: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.natural-home__menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 1.5px;
+    background: #fff;
+    transition: width .25s ease, transform .25s ease, opacity .2s ease;
+}
+
+.natural-home__menu-toggle span:nth-child(2) { width: 17px; }
+.natural-home__menu-toggle:hover span:nth-child(2) { width: 25px; }
+
+.natural-home__menu.is-open .natural-home__menu-toggle span:first-child {
+    transform: translateY(6.5px) rotate(45deg);
+}
+.natural-home__menu.is-open .natural-home__menu-toggle span:nth-child(2) { opacity: 0; }
+.natural-home__menu.is-open .natural-home__menu-toggle span:last-child {
+    transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.natural-home__menu-accent {
+    display: block;
+    width: 34px;
+    height: 2px;
+    margin: 5px 0 0 2px;
+    background: #e8793d;
+    transition: width .3s ease;
+}
+
+.natural-home__menu.is-open .natural-home__menu-accent { width: 100%; }
+
+.natural-home__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-top: 18px;
+    animation: natural-home-menu-in .3s ease both;
+}
+
+.natural-home__nav[hidden] { display: none; }
+
+.natural-home__nav a,
+.natural-home__socials a,
+.natural-home__contact {
+    position: relative;
+    width: fit-content;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+}
+
+.natural-home__nav a::after,
+.natural-home__socials a::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    left: 0;
+    right: 100%;
+    bottom: -4px;
+    background: currentColor;
+    transition: right .3s ease;
+}
+
+.natural-home__nav a:hover::after,
+.natural-home__socials a:hover::after {
+    right: 0;
+}
+
+.natural-home__center {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 49%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 900px);
+    text-align: center;
+    text-shadow: 0 2px 24px rgba(0,0,0,.22);
+    animation: natural-home-reveal 1.4s ease both;
+}
+
+.natural-home__eyebrow {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .28em;
+    margin: 0 0 7px;
+    opacity: .88;
+}
+
+.natural-home__signature {
+    display: block;
+    width: min(100%, 900px);
+    height: auto;
+    overflow: visible;
+    margin: -2px auto 0;
+}
+
+.natural-home__signature text {
+    font-family: "Allura", cursive;
+    font-size: 174px;
+    font-weight: 400;
+    fill: transparent;
+    stroke: rgba(255,255,255,.96);
+    stroke-width: 1.25px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1750;
+    stroke-dashoffset: 1750;
+    animation: natural-home-ink-write 3.1s cubic-bezier(.48,.02,.38,1) .45s forwards,
+               natural-home-ink-fill .7s ease 2.8s forwards;
+}
+
+.natural-home__signature-line {
+    display: block;
+    width: clamp(72px, 9vw, 130px);
+    height: 1px;
+    background: rgba(255,255,255,.8);
+    margin: 23px auto 0;
+}
+
+.natural-home__slide-count {
+    position: absolute;
+    z-index: 2;
+    right: clamp(24px, 3.2vw, 58px);
+    bottom: 105px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 9px;
+    letter-spacing: .12em;
+}
+
+.natural-home__slide-count i {
+    display: block;
+    width: 38px;
+    height: 1px;
+    background: rgba(255,255,255,.7);
+}
+
+.natural-home__bottom {
+    position: absolute;
+    z-index: 2;
+    left: clamp(24px, 3.2vw, 58px);
+    right: clamp(24px, 3.2vw, 58px);
+    bottom: 0;
+    min-height: 70px;
+    border-top: 1px solid rgba(255,255,255,.46);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.natural-home__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(12px, 2.2vw, 30px);
+}
+
+.natural-home__socials a,
+.natural-home__contact {
+    font-size: 9px;
+    letter-spacing: .08em;
+}
+
+.natural-home__footer-note {
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: .25em;
+    opacity: .78;
+}
+
+.natural-home__contact {
+    justify-self: end;
+}
+
+.natural-home__contact span {
+    margin-left: 6px;
+    color: #e2d2af;
+}
+
+@keyframes natural-home-menu-in {
+    from { opacity: 0; transform: translateY(-7px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes natural-home-ink-write {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes natural-home-ink-fill {
+    to { fill: rgba(255,255,255,.98); }
+}
+
+@keyframes natural-home-reveal {
+    from { opacity: 0; transform: translate(-50%, -46%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@media (max-width: 650px) {
+    .natural-home__top { top: 22px; left: 22px; }
+    .natural-home__monogram { font-size: 44px; margin-bottom: 22px; }
+    .natural-home__nav { gap: 12px; padding-top: 15px; }
+    .natural-home__nav a { font-size: 9px; }
+    .natural-home__center { top: 48%; width: 94%; }
+    .natural-home__eyebrow { font-size: 7px; letter-spacing: .17em; }
+    .natural-home__signature { width: 100%; }
+    .natural-home__signature text { font-size: 174px; stroke-width: 1.6px; }
+    .natural-home__bottom {
+        left: 20px;
+        right: 20px;
+        min-height: 84px;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+    }
+    .natural-home__socials { max-width: 220px; gap: 12px 16px; }
+    .natural-home__socials a,
+    .natural-home__contact { font-size: 8px; }
+    .natural-home__footer-note { display: none; }
+    .natural-home__slide-count { right: 22px; bottom: 105px; }
+}
+
+@media (max-width: 380px) {
+    .natural-home__socials { max-width: 175px; }
+    .natural-home__nav { gap: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .natural-home *,
+    .natural-home *::before,
+    .natural-home *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+    .natural-home__signature text {
+        stroke-dashoffset: 0;
+        fill: rgba(255,255,255,.98);
+    }
+} */
