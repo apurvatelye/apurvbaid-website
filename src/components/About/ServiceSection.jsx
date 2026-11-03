@@ -1,8 +1,13 @@
 export const services = [
   {
     title: "More Than Designers",
-    description:
-      "We don't see ourselves as consultants who simply prepare drawings and leave. We become a part of the journey. From planning layouts and selecting materials to guiding contractors, solving site challenges and refining every little detail, we stay involved because we know that good design is built through hundreds of thoughtful decisions—not one grand idea. Every project teaches us something new, and that curiosity keeps us growing.",
+    description: `We don't see ourselves as consultants who simply prepare drawings and leave.
+
+We become a part of the journey.
+
+From planning layouts and selecting materials to guiding contractors, solving site challenges and refining every little detail, we stay involved because we know that good design is built through hundreds of thoughtful decisions—not one grand idea.
+
+Every project teaches us something new, and that curiosity keeps us growing.`,
   },
   {
     title: "A Personal Note From Apurv",
@@ -43,11 +48,11 @@ export default function ServicesSection() {
 
         <p className="text-[#9d9d9d] pb-6 leading-8">
           For us, design begins long before choosing colours, furniture or
-          finishes. It begins with conversations. We spend time understanding
-          how our clients live, work, celebrate, relax and dream. Every family
-          has different habits. Every business has a different culture. Every
-          individual has a different personality. That is why we don't believe
-          in repeating designs. <br />
+          finishes. It begins with conversations. <br />
+          We spend time understanding how our clients live, work, celebrate,
+          relax and dream. Every family has different habits. Every business has
+          a different culture. Every individual has a different personality.
+          That is why we don't believe in repeating designs. <br />
           Our approach revolves around what we call{" "}
           <span className="text-white font-semibold">Space Psychology</span> the
           understanding that design has the power to influence emotions,

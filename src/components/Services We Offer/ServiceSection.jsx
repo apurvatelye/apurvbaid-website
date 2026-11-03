@@ -2,7 +2,8 @@ export const services = [
   {
     title: "1. Residential Interior Design",
     description:
-      "A home is one of the most personal spaces anyone will ever own. It deserves more than a catalogue of furniture and finishes. We design homes around the lifestyle, routines and aspirations of the people living in them. Our goal is simple—to create a house that genuinely feels like home.",
+      `A home is one of the most personal spaces anyone will ever own. It deserves more than a catalogue of furniture and finishes.
+      We design homes around the lifestyle, routines and aspirations of the people living in them. Our goal is simple—to create a house that genuinely feels like home.`,
   },
   {
     title: "2. Commercial & Office Design",

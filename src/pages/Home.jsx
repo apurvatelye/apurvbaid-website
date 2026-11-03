@@ -1,8 +1,10 @@
-
 import { useEffect, useState } from "react";
 import signature from "../assets/signature.webp";
 
 import image1 from "../assets/home-page-image/1.png";
+import image10 from "../assets/home-page-image/10.png";
+import image11 from "../assets/home-page-image/11.png";
+import image12 from "../assets/home-page-image/12.png";
 import image2 from "../assets/home-page-image/2.png";
 import image3 from "../assets/home-page-image/3.png";
 import image4 from "../assets/home-page-image/4.png";
@@ -11,9 +13,6 @@ import image6 from "../assets/home-page-image/6.png";
 import image7 from "../assets/home-page-image/7.png";
 import image8 from "../assets/home-page-image/8.png";
 import image9 from "../assets/home-page-image/9.png";
-import image10 from "../assets/home-page-image/10.png";
-import image11 from "../assets/home-page-image/11.png";
-import image12 from "../assets/home-page-image/12.png";
 
 const slides = [
   { url: image1, alt: "Interior design image 1" },
@@ -43,9 +42,9 @@ const navigation = [
 ];
 
 const socialLinks = [
-  ["Instagram", "https://www.instagram.com/"],
-  ["LinkedIn", "https://www.linkedin.com/"],
-  ["Pinterest", "https://www.pinterest.com/"],
+  ["Instagram", "https://www.instagram.com/atelye_apurv/?hl=en"],
+  // ["LinkedIn", "https://www.linkedin.com/"],
+  // ["Pinterest", "https://www.pinterest.com/"],
 ];
 
 export default function Home() {
@@ -62,7 +61,6 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-black text-white">
-
       {/* Background Slideshow */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
@@ -84,7 +82,6 @@ export default function Home() {
       {/* Navbar */}
       <header className="absolute left-0 top-0 z-30 p-3 sm:p-4">
         <div className="flex flex-col items-start">
-
           {/* Hamburger Icon */}
           <button
             type="button"
@@ -160,7 +157,6 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="absolute bottom-0 left-0 z-20 flex w-full flex-col items-center justify-between gap-4 px-5 py-6 sm:flex-row sm:px-10">
-
         {/* Social Links */}
         <div className="flex items-center gap-5">
           {socialLinks.map(([label, href]) => (
